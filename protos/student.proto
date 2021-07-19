@@ -1,0 +1,12 @@
+syntax = "proto3";
+package student;
+
+// This is referencing the file `person.proto` in the same directory,
+// but unfortunately I have to import it with this prefix, because the real code
+// is not under my control, and has been set up in some idiosyncratic way.
+import "website.com/protos/person.proto";
+
+message Student {
+    person.Person person = 1;
+    uint32 yearOfSchool = 2;
+}
