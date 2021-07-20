@@ -2,7 +2,7 @@ syntax = "proto3";
 package student;
 
 // This should be referencing the "person.proto" sibling file in this directory.
-import "person.proto";
+import "deps/person.proto";
 
 message Student {
     person.Person person = 1;
