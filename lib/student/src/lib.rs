@@ -1,1 +1,1 @@
-tonic::include_proto!("student");
+include!(concat!(env!("OUT_DIR"), "/student.rs"));

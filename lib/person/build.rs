@@ -1,3 +1,4 @@
-fn main() {
-    tonic_build::compile_protos("../../protos/person.proto").unwrap();
+fn main() -> std::io::Result<()> {
+    prost_build::compile_protos(&["../../protos/person.proto"], &["../.."])?;
+    Ok(())
 }
