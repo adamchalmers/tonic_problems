@@ -1,3 +1,11 @@
-There are two proto libraries, `person` and `student`. Students are a specialized kind of person, so the student library imports the person library.
+There are two proto packages, `person` and `student`. Students are a specialized
+kind of person, so the student library imports the person library.
 
-This works fine if student and person are in the same directory, but in real life, I don't have control over the location of either file. Furthermore, the `student` libraries isn't importing `person.proto`, it's importing `some/host/path/to/person.proto`. How can I tell Tonic to find `some/host/path/to/person.proto` in the right place?
+Each proto package has its own corresponding Rust library under `lib/`. I've got
+`lib/person` working just fine, however, `lib/student` panics when generating
+code, because it can't resolve the protobuf `import` statement for the `person`
+package.
+
+I can partially get around this if I move the proto packages around and rename
+them, but in the real-world code I don't have control over any file locations,
+package declarations or import paths.
