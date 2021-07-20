@@ -1,11 +1,5 @@
-[package]
-name = "student"
-version = "0.1.0"
-edition = "2018"
+[workspace]
 
-[dependencies]
-prost = "0.8"
-tonic = "0.5"
-
-[build-dependencies]
-tonic-build = "0.5"
+members = [
+    "lib/person",
+]
