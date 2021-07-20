@@ -5,7 +5,7 @@ edition = "2018"
 
 [dependencies]
 prost = "0.8"
+person = { path = "../person" }
 
 [build-dependencies]
-person = { path = "../person" }
 prost-build = "0.8"
